@@ -1,15 +1,15 @@
-import java.util.Scanner;
+import java.io.*;
 
-public class VILORIA_CASTRO_LABACT2_SCANNER {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
+public class VILORIA_CASTRO_LABACT2_BUFFEREDREADER {
+    
+    public static void main(String [] args) throws IOException {
+        BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
         String lines = "===================================="; //for organizing
 
         //this starts the program
         System.out.println(lines + "\nWelcome to Viloria & Castro Dairy Farms\n" + lines);
         System.out.print("Enter number of eggs: ");
-        int amount = scan.nextInt(); 
+        int amount = Integer.parseInt(scan.readLine()); 
         System.out.printf(lines + "\nYou ordered %,d eggs.\n", amount);
         int dozen = amount/12;
         int loose = amount%12;
@@ -19,5 +19,5 @@ public class VILORIA_CASTRO_LABACT2_SCANNER {
         System.out.printf(lines + "\nYour total amount due is: Php %,.2f\n" + lines, total);
         scan.close();
     }
-    
+
 }
